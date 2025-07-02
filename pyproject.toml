@@ -1,0 +1,81 @@
+[project]
+name = "rag-n-roll-extractor"
+version = "0.1.0"
+description = "A professional Retrieval-Augmented Generation (RAG) extraction tool"
+authors = [
+    {name = "A.Ali", email = "ali.a@aucegypt.edu"}
+]
+readme = "README.md"
+requires-python = "^3.12"
+license = "MIT"
+keywords = ["rag", "nlp", "extraction", "text-processing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: General",
+]
+
+dependencies = [
+    "langchain>=0.1.0",
+    "transformers>=4.36.0",
+    "torch>=2.1.0",
+    "pandas>=2.1.0",
+    "numpy>=1.24.0",
+    "pydantic>=2.5.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.12.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "pre-commit>=3.5.0",
+    "jupyterlab>=4.0.0",
+]
+
+docs = [
+    "sphinx>=7.1.0",
+    "sphinx-rtd-theme>=1.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/andykofman/RAG-n-Roll-Extractor"
+Documentation = "https://rag-n-roll-extractor.readthedocs.io"
+Repository = "https://github.com/andykofman/RAG-n-Roll-Extractor.git"
+Issues = "https://github.com/andykofman/RAG-n-Roll-Extractor/issues"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=src/rag_n_roll_extractor --cov-report=xml --cov-report=html"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = ["E", "F", "B", "I", "N", "UP", "PL", "RUF"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+
+[tool.coverage.run]
+source = ["src/rag_n_roll_extractor"]
+omit = ["tests/*"]
