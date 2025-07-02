@@ -18,37 +18,19 @@ classifiers = [
 ]
 
 dependencies = [
-    "langchain>=0.1.0,<1.0.0",
-    "langchain-community>=0.0.10,<1.0.0",
-    "langchain-openai>=0.0.5,<1.0.0",
-    "langchain-groq>=0.0.1,<1.0.0",
-    "transformers>=4.36.0",
-    "torch>=2.1.0",
-    "pandas>=2.1.0",
-    "numpy>=1.24.0",
-    "pydantic>=2.5.0",
-    "tqdm>=4.66.0",
+    "unstructured[all-docs] (>=0.18.2,<0.19.0)",
     "pdf2image>=1.16.3",
     "pytesseract>=0.3.10",
-    "python-magic-bin>=0.4.14",
-    "python-magic>=0.4.27",
-    "python-dotenv>=1.0.0",
-    "unstructured[all-docs]>=0.12.0",
-    "pillow>=10.0.0",
-    "lxml>=5.0.0",
-    "chromadb>=0.4.0",
-    "tiktoken>=0.5.0",
+    "python-magic-bin>=0.4.14",  # Required for file type detection
+    "python-magic>=0.4.27",      # Required for file type detection
+    "pillow>=10.0.0",           # Required for image processing
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.4.0",
-    "pytest-cov>=4.1.0",
     "black>=23.12.0",
     "ruff>=0.1.0",
     "mypy>=1.7.0",
-    "pre-commit>=3.5.0",
-    "jupyterlab>=4.0.0",
 ]
 
 docs = [
